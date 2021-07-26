@@ -35,4 +35,18 @@ punkAPI.getBeers()
 
 });
 
+
+app.get('/random-beer', (req, res) => {
+
+  punkAPI.getRandom()
+    .then((beersResponse)=>{
+      console.log(beersResponse[0]);
+      res.render("random-beer.hbs",{
+        beer:beersResponse[0],
+      })
+    })
+    .catch(error=>console.log(error))
+  
+  });
+
 app.listen(3000, () => console.log('http://localhost:3000'));
