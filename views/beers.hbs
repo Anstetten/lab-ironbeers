@@ -2,12 +2,6 @@
 
 <div id=gridWrapper>
     {{#each beers}}
-    <div>
-        <p class="beerNames">{{this.name}}</p>
-        <p class="taglines">{{this.tagline}}</p>
-        <img src="{{this.image_url}}" alt="beer">
-        <p class="descriptions">{{this.description}}</p>
-
-    </div>
+        {{> beerpartial}}
     {{/each}}
 </div>
