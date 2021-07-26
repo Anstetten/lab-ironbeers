@@ -49,4 +49,16 @@ app.get('/random-beer', (req, res) => {
   
   });
 
+  app.get('/beers/:id', (req, res) => {
+
+    punkAPI.getBeer(req.params.id)
+      .then((beerResponse)=>{
+        res.render("random-beer.hbs",{
+          beer:beerResponse[0],
+        })
+      })
+      .catch(error=>console.log(error))
+    
+    });
+
 app.listen(3000, () => console.log('http://localhost:3000'));

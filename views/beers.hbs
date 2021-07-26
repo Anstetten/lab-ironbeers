@@ -2,6 +2,9 @@
 
 <div id=gridWrapper>
     {{#each beers}}
-        {{> beerpartial}}
+        <a href="/beers/{{this.id}}">
+            {{> beerpartial}}
+        </a>
+
     {{/each}}
 </div>
