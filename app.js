@@ -22,4 +22,17 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/beers', (req, res) => {
+
+punkAPI.getBeers()
+  .then((beersResponse)=>{
+   
+    res.render("beers.hbs",{
+      beers:beersResponse,
+    })
+  })
+  .catch(error=>console.log(error))
+
+});
+
 app.listen(3000, () => console.log('http://localhost:3000'));
